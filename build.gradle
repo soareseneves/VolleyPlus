@@ -1,16 +1,14 @@
-buildscript {
-    repositories {
-        google()
-        mavenCentral()
-    }
-    dependencies {
-        classpath "com.android.tools.build:gradle:8.2.2"
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 35
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 35
     }
 }
 
-allprojects {
-    repositories {
-        google()
-        mavenCentral()
-    }
+dependencies {
+    implementation 'com.android.volley:volley:1.2.1'
 }
