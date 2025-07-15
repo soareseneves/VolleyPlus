@@ -17,13 +17,15 @@ dependencies {
     implementation 'com.android.volley:volley:1.2.1'
 }
 
-publishing {
-    publications {
-        release(MavenPublication) {
-            from components.release
-            groupId = 'com.github.soareseneves'
-            artifactId = 'VolleyPlus'
-            version = '0.1.4'
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.github.soareseneves'
+                artifactId = 'VolleyPlus'
+                version = '0.1.4'
+            }
         }
     }
 }
