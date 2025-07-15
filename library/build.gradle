@@ -1,20 +1,29 @@
-apply plugin: 'com.android.library'
+plugins {
+    id 'com.android.library'
+    id 'maven-publish'
+}
 
 android {
-    namespace 'dev.dworks.volley'
-    compileSdkVersion 33
+    namespace 'com.dworks.volleyplus'
+    compileSdk 35
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 33
-    }
-
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        minSdk 16
+        targetSdk 35
     }
 }
 
 dependencies {
     implementation 'com.android.volley:volley:1.2.1'
+}
+
+publishing {
+    publications {
+        release(MavenPublication) {
+            from components.release
+            groupId = 'com.github.soareseneves'
+            artifactId = 'VolleyPlus'
+            version = '0.1.4'
+        }
+    }
 }

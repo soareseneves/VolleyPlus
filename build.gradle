@@ -1,27 +1,17 @@
-apply plugin: 'com.android.library'
-apply plugin: 'maven-publish'
-
-android {
-    compileSdkVersion 35
-
-    defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 35
+// build.gradle na raiz
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
     }
-
-    // Se quiser facilitar o uso via JitPack
-    publishing {
-        publications {
-            release(MavenPublication) {
-                from components.release
-                groupId = 'com.github.soareseneves'
-                artifactId = 'VolleyPlus'
-                version = '0.1.4'
-            }
-        }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.4.1'
     }
 }
 
-dependencies {
-    implementation 'com.android.volley:volley:1.2.1'
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
 }
