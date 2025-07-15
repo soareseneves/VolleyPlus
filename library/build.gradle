@@ -24,7 +24,7 @@ afterEvaluate {
                 from components.release
                 groupId = 'com.github.soareseneves'
                 artifactId = 'VolleyPlus'
-                version = '0.1.4'
+                version = '1.0.1'
             }
         }
     }
